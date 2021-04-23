@@ -13,21 +13,28 @@
 </head>
 
 <body>
-    <div id="chat-wrap">
-        <h2>Live Chat Application</h2>
-        <div id="chat-window">
-            <div id="output">
-
-            </div>
-            <div id="feedback">
-
+    <div class="container ">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-8">
+                <div id="chat-wrap">
+                    <h2>Live Chat Application</h2>
+                    <div id="chat-window">
+                        <div id="output">
+            
+                        </div>
+                        <div id="feedback">
+            
+                        </div>
+                    </div>
+                    <input type="text" id="sender" placeholder="Ad">
+                    <input type="text" id="message" placeholder="Mesaj">
+                    <button type="button" id="submitBtn">Gönder</button>
+            
+                </div>
             </div>
         </div>
-        <input type="text" id="sender" placeholder="Ad">
-        <input type="text" id="message" placeholder="Mesaj">
-        <button type="button" id="submitBtn">Gönder</button>
-
     </div>
+    
 
     <script src="chat.js"></script>
 </body>

@@ -30,6 +30,7 @@ message.value=''
 })
 
 message.addEventListener('keypress',()=>{
+    
     socket.emit('typing',sender.value)
 })
 

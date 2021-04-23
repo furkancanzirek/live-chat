@@ -18,6 +18,7 @@ submitBtn.addEventListener('click',()=>{
             message: message.value,
             sender: sender.value
         })
+        message.value=''
     }
     
 })
@@ -26,7 +27,7 @@ socket.on('chat',data=>{
    
     feedback.innerHTML=''
     output.innerHTML+='<p><strong>' + data.sender+': </strong>'+data.message+'</p>'
-message.value=''
+    
 })
 
 message.addEventListener('keypress',()=>{

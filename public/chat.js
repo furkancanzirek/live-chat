@@ -7,24 +7,26 @@ const output=document.getElementById('output')
 const feedback=document.getElementById('feedback')
 
 submitBtn.addEventListener('click',()=>{
-    socket.emit('chat',{
-        message: message.value,
-        sender: sender.value
-    })
+    if (message.value=='') {
+        alert('Mesaj alanı boş olamaz')
+    }
+    else if (sender.value==''){
+        alert('Gönderici adı boş olamaz')
+    }
+    else{
+        socket.emit('chat',{
+            message: message.value,
+            sender: sender.value
+        })
+    }
+    
 })
 
 socket.on('chat',data=>{
-    if (message.value=='') {
-        alert('Lütfen Mesaj Alanını Doldurunuz')
-    }
-    else if (sender.value==''){
-        alert('Lütfen Kullanıcı Adı Alanını Doldurunuz')
-    }else{
-        feedback.innerHTML=''
-        output.innerHTML+='<p><strong>' + data.sender+': </strong>'+data.message+'</p>'
-    message.value=''
-    }
-    
+   
+    feedback.innerHTML=''
+    output.innerHTML+='<p><strong>' + data.sender+': </strong>'+data.message+'</p>'
+message.value=''
 })
 
 message.addEventListener('keypress',()=>{

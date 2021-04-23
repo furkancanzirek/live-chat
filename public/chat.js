@@ -14,9 +14,17 @@ submitBtn.addEventListener('click',()=>{
 })
 
 socket.on('chat',data=>{
-    feedback.innerHTML=''
-    output.innerHTML+='<p><strong>' + data.sender+': </strong>'+data.message+'</p>'
-message.value=''
+    if (message.value=='') {
+        alert('Lütfen Mesaj Alanını Doldurunuz')
+    }
+    else if (sender.value==''){
+        alert('Lütfen Kullanıcı Adı Alanını Doldurunuz')
+    }else{
+        feedback.innerHTML=''
+        output.innerHTML+='<p><strong>' + data.sender+': </strong>'+data.message+'</p>'
+    message.value=''
+    }
+    
 })
 
 message.addEventListener('keypress',()=>{

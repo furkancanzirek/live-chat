@@ -1,7 +1,8 @@
 const express= require('express')
 const socket = require('socket.io')
+PORT =process.env.PORT ||8080
 const app = express()
-const server = app.listen(8080)
+const server = app.listen(PORT)
 
 app.use(express.static("public"))
 const io=socket(server)

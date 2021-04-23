@@ -1,4 +1,4 @@
-const socket=io.connect('https://live-chat-app-furkan.herokuapp.com')
+const socket=io.connect('live-chat-app-furkan.herokuapp.com')
 
 const sender=document.getElementById('sender')
 const submitBtn=document.getElementById('submitBtn')
